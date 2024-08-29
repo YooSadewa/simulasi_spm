@@ -39,6 +39,7 @@
                     break;
                 case 1:
                     $statusText = 'Diproses';
+                    $statusClass = 'bg-warning';
                     break;
                 case 2:
                     $statusText = 'Lihat Tanggapan';

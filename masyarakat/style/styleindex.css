@@ -38,6 +38,7 @@ body {
 }
 
 .modal-content h2 {
+    margin-top: 20px;
     margin-bottom: 20px;
     text-transform: uppercase;
 }
@@ -47,6 +48,7 @@ body {
     flex-direction: column;
     width: 100%; 
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .modal-content form input {
@@ -54,6 +56,15 @@ body {
     margin: 10px 0;
     padding: 10px;
     box-sizing: border-box;
+}
+
+.modal-content form a {
+    color: #000;
+    margin: 10px 0;
+    justify-content: left;
+    width: 80%;
+    display: flex;
+    font-size: 12px;
 }
 
 .modal-content form input[type="submit"] {
@@ -83,6 +94,24 @@ body {
 
 .close:hover,
 .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.closedaftar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.closedaftar:hover,
+.closedaftar:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
