@@ -18,6 +18,7 @@
     nav h1 {
         text-transform: uppercase;
         color: #FFF; 
+        margin-top: 0;
     }
 
     nav a {
@@ -27,6 +28,7 @@
         text-align: end;
         width: 40%;
         font-weight: 400;
+        padding: 0;
     }
 
     nav ul {
@@ -54,7 +56,6 @@
         <img src="assets/lambang_batam.png" alt="">
         <h1>sistem pengaduan masyarakat kota batam</h1>
         <ul>
-            <li><a href="">Tentang Kami</a></li>
             <li>
                 <?php if($isLoggedIn): ?>
                     <a href="profile.php" class="fa-regular fa-user"></a>

@@ -1,6 +1,8 @@
 <?php
 session_start();
 $isLoggedIn = isset($_SESSION['username']);
+
+include '../config.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,46 +20,20 @@ $isLoggedIn = isset($_SESSION['username']);
     ?>
     <div class="form-container">
         <h1>Buat Laporan</h1>
-        <form action="" method="post">
-            <input type="text" name="nama" disabled value="Thio" id="nama">
-            <input type="tel" name="nik" disabled value="66574923">
+        <form action="proses/proseslaporan.php" method="post"  enctype="multipart/form-data">
+            <input type="text" name="nama" readonly value="<?= $_SESSION['nama']?>" id="nama">
+            <input type="tel" name="nik" readonly value="<?= $_SESSION['nik']?>">
+            <label for="tanggal">
+                <input type="date" name="tgl_pengaduan" id="tanggal" value="<?php echo date('Y-m-d'); ?>" readonly required>
+            </label>
             <textarea name="laporan" id="" placeholder="Berikan Laporanmu"></textarea> 
             <label for="foto"><h2>Sertakan Foto?</h2>
-                <input type="file" name="foto" id="foto" multiple>                
+                <input type="file" name="foto" id="foto">                
             </label>
             <div id="preview"></div>
+            <input type="hidden" name="status" value="0">
             <input type="submit" value="Kirimkan Laporan" name="submit">
         </form>
     </div>
-
-    <script>
-    // Array untuk menyimpan file yang dipilih
-    let selectedFiles = [];
-
-    document.getElementById('foto').addEventListener('change', function() {
-        const preview = document.getElementById('preview');
-        
-        // Menggabungkan file yang baru dipilih dengan file yang sudah ada
-        for (let i = 0; i < this.files.length; i++) {
-            selectedFiles.push(this.files[i]);
-        }
-
-        // Kosongkan pratinjau sebelumnya
-        preview.innerHTML = '';
-
-        // Tampilkan semua file yang telah dipilih
-        selectedFiles.forEach(file => {
-            const reader = new FileReader();
-
-            reader.onload = function(e) {
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                preview.appendChild(img);
-            }
-
-            reader.readAsDataURL(file);
-        });
-    });
-</script>
 </body>
 </html>

@@ -11,6 +11,7 @@
         session_start();
         $_SESSION['id'] = $data['id'];
         $_SESSION['nama'] = $data['nama'];
+        $_SESSION['nik'] = $data['nik'];
         $_SESSION['username'] = $username;
         $_SESSION['password'] = $password;
 
