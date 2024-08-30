@@ -53,7 +53,15 @@
                 <td><?= $row['nik'] ?></td>
                 <td><img src="foto_laporan/<?= $row['foto'] ?>" alt="" style="width: 100px; height: 100px;"></td>
                 <td><?= $row['isi_laporan'] ?></td>
-                <td class="<?= $statusClass ?>"><?= $statusText ?></td>
+                <td><?php if ($row['status'] == 0): ?>
+                        <!-- Jika status masih "Terkirim" -->
+                        <button href="#" class="btn btn-warning">Proses</button disabled> 
+                    <?php elseif ($row['status'] == 'proses'): ?>
+                        <!-- Jika status sudah "Diproses" -->
+                        <button href="#" class="btn btn-success">Terkirim</button>
+                    <?php elseif ($row['status'] == 'selesai'): ?>
+                        <a href="filetanggapan.php?id=<?= $row['id_pengaduan'] ?>" class="btn btn-primary">Lihat Tanggapan</a>
+                    <?php endif; ?></td>
             </tr>
             <?php 
         }

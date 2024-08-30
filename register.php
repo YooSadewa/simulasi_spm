@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +16,7 @@
             justify-content: center;
             align-items: center;
             background-color: #fefefe;
-            margin: 15% auto;
+            margin: 11% auto;
             padding: 20px;
             border: 1px solid #888;
             width: 40%;
@@ -50,11 +49,16 @@
             font-weight: bold;
             color: #00712D;
             transition: 0.2s;
+            margin-top: 20px;
         }
 
         .modal-content form input[type="submit"]:hover {
             background-color: #00712D;
             color: #FFF;
+        }
+
+        .modal-content form input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
         }
 
         .modal-content form a {
@@ -67,14 +71,18 @@
     </style>
 </head>
 <body>
-    <div class="modal-content">
-        <h2>Login</h2>
-        <form action="proseslogin.php" method="POST">
-            <input type="text" name="username" placeholder="Masukkan Username" required>
-            <input type="password" name="password" placeholder="Masukkan Password" required>
-            <a href="register.php">Register?</a>
-            <input type="submit" value="LOGIN" name="submit">
-        </form>
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <h2>Daftar</h2>
+            <form action="prosesdaftar.php" method="POST">
+                <input type="tel" name="nama_petugas" placeholder="Masukkan Nama" required>
+                <input type="text" name="username" placeholder="Masukkan Username" required>
+                <input type="password" name="password" placeholder="Masukkan Password" required>
+                <input type="number" name="telp" placeholder="Masukkan No. Telp" required>
+                <a href="login.php">Kembali ke Halaman Login</a>
+                <input type="submit" value="DAFTAR" name="submit">
+            </form>
+        </div>
     </div>
 </body>
 </html>
